@@ -1,0 +1,29 @@
+title: ~/shivanshu
+author:
+  name: Shivanshu Semwal
+  email: semwalshivanshu.com
+
+# The `>` after `description:` means to ignore line-breaks until next key.
+# If you want to omit the line-break after the end of text, use `>-` instead.
+description: >
+  Shivanshu, crafting code to create solutions and a better tomorrow.
+
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+minima:
+  social_links:
+     - { platform: github,         user_url: "https://github.com/shivanshu-semwal" }
+     - { platform: instagram,      user_url: "https://www.instagram.com/shivanshu_semwal" }
+     - { platform: linkedin,       user_url: "https://www.linkedin.com/in/shivanshu-semwal" }
+     - { platform: twitter,        user_url: "https://twitter.com/shivanshusemwal" }
+  skin: auto
+
+header_pages:
+  - projects.md
+  - about.md
+
+paginate: 5
+paginate_path: "/project/page:num/"

@@ -1,0 +1,31 @@
+// Placeholder to allow defining custom styles that override everything else.
+// (Use `_sass/minima/custom-variables.scss` to override variable defaults)
+
+.tag-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.tag-list a{
+    border: 1px solid;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 3px;
+}
+
+.internal-link{
+    text-decoration: underline;
+}
+
+.posts-by-tag{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 3px;
+}
+
+.post-list h3 > a{
+    font-size: $base-font-size;
+}

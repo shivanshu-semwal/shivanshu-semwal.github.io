@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+{%- assign sortedTags = site.tags | sort -%}
+<div class="tag-list">
+    {% for tag in sortedTags %}
+        <a href="#{{tag[0]}}">#{{ tag[0] }}&nbsp;({{ tag[1] | size }})</a>
+    {% endfor %}
+</div>
+{% for tag in sortedTags %}
+    <section class="posts-by-tag">
+        <h2 id="{{ tag[0] }}">{{ tag[0] }}</h2>
+        {% for post in tag[1] %}
+            {% include tag-list.html %}
+        {% endfor %}
+        <p><a href="#" class="internal-link">Top &#8593;</a></p>
+    </section>
+{% endfor %}

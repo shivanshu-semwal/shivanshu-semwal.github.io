@@ -1,0 +1,24 @@
+{%- assign dateOfPost = {{post.date | date: "%d"}} -%}
+
+{%- if dateOfPost == "01" or dateOfPost == "21" or dateOfPost == "31" -%}
+    {%- assign ordinalEnding = "st" -%}
+{%- elsif dateOfPost == "02" or dateOfPost == "22" -%}
+    {%- assign ordinalEnding = "nd" -%}
+{%- elsif dateOfPost == "03" or dateOfPost == "23" -%}
+    {%- assign ordinalEnding = "rd" -%}
+{%- else %}
+    {%- assign ordinalEnding = "th" -%}
+{%- endif %}
+
+{%- assign firstDigitDofP = dateOfPost | slice: 0 -%}
+{%- if firstDigitDofP == "0" -%}
+    {%- assign prettyDateOfPost = dateOfPost | slice: 1 -%}
+{%- else -%}
+    {%- assign prettyDateOfPost = dateOfPost -%}
+{%- endif -%}
+
+<p>
+    <a href="{{ post.url | relative_url }}" title="{{ post.title }}" class="blog-listing-link">{{ post.title }}</a>
+    <br>
+    {{ post.description }}
+</p>
