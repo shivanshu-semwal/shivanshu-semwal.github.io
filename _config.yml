@@ -16,7 +16,7 @@ plugins:
 minima:
   social_links:
      - { platform: github,         user_url: "https://github.com/shivanshu-semwal" }
-     - { platform: instagram,      user_url: "https://www.instagram.com/shivanshu_semwal" }
+     - { platform: instagram,      user_url: "https://portfolio.pixelfed.social/totoro" }
      - { platform: linkedin,       user_url: "https://www.linkedin.com/in/shivanshu-semwal" }
      - { platform: twitter,        user_url: "https://twitter.com/shivanshusemwal" }
   skin: auto
