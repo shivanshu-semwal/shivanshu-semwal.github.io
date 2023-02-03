@@ -23,6 +23,7 @@ minima:
 
 header_pages:
   - projects.md
+  - bookmarks.md
   - about.md
 
 paginate: 5

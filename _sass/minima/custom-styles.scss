@@ -8,24 +8,49 @@
     margin-bottom: 20px;
 }
 
-.tag-list a{
+.tag-list a {
     border: 1px solid;
     padding: 5px;
     margin: 5px;
     border-radius: 3px;
 }
 
-.internal-link{
+.internal-link {
     text-decoration: underline;
 }
 
-.posts-by-tag{
+.posts-by-tag {
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid;
     border-radius: 3px;
 }
 
-.post-list h3 > a{
+.post-list h3>a {
     font-size: $base-font-size;
+}
+
+// for bookmarks
+
+
+.bookmark {
+    display: none;
+    /* default hidden */
+}
+
+.options input {
+    visibility: hidden;
+    position: absolute;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+    display: flow-root list-item;
+}
+
+.categories {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
