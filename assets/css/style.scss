@@ -198,12 +198,12 @@ a:focus-visible {
   background: var(--color-surface);
   border: 1px solid #bdc9d6;
   border-radius: 0.75rem;
-  box-shadow: 0 2px 8px rgb(25 33 44 / 10%);
+  box-shadow: 0 2px 8px rgba(25, 33, 44, 0.10);
 }
 
 .project-card:hover {
   border-color: #9cabbc;
-  box-shadow: 0 4px 12px rgb(25 33 44 / 14%);
+  box-shadow: 0 4px 12px rgba(25, 33, 44, 0.14);
 }
 
 .project-card h3 {
