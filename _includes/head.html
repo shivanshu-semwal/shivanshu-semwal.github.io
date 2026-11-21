@@ -2,5 +2,71 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- seo %}
+  <script>
+    (function () {
+      var storageKey = "theme";
+      var root = document.documentElement;
+      var preference;
+
+      try {
+        preference = window.localStorage.getItem(storageKey);
+      } catch (error) {
+        preference = null;
+      }
+
+      if (preference === "light" || preference === "dark") {
+        root.setAttribute("data-theme", preference);
+      }
+
+      function currentTheme() {
+        if (root.hasAttribute("data-theme")) {
+          return root.getAttribute("data-theme");
+        }
+        return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+      }
+
+      function updateToggle(button) {
+        var isDark = currentTheme() === "dark";
+        button.setAttribute("aria-pressed", String(isDark));
+        button.hidden = false;
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var button = document.querySelector("[data-theme-toggle]");
+        if (!button) {
+          return;
+        }
+
+        updateToggle(button);
+        button.addEventListener("click", function () {
+          var nextTheme = currentTheme() === "dark" ? "light" : "dark";
+          root.setAttribute("data-theme", nextTheme);
+          updateToggle(button);
+
+          try {
+            window.localStorage.setItem(storageKey, nextTheme);
+          } catch (error) {
+            // The current choice still applies for this page when storage is unavailable.
+          }
+        });
+
+        if (window.matchMedia) {
+          var colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
+          var updateSystemTheme = function () {
+            if (!root.hasAttribute("data-theme")) {
+              updateToggle(button);
+            }
+          };
+          if (colorScheme.addEventListener) {
+            colorScheme.addEventListener("change", updateSystemTheme);
+          } else if (colorScheme.addListener) {
+            colorScheme.addListener(updateSystemTheme);
+          }
+        }
+      });
+    })();
+  </script>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>

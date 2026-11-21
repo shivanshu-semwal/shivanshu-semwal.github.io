@@ -7,12 +7,58 @@
   --color-text: #19212c;
   --color-muted: #526071;
   --color-accent: #0759a5;
-  --color-border: #d7dee7;
+  --color-border: #8192a5;
+  --color-focus: #d15c00;
+  --color-card-border: #8192a5;
+  --color-card-hover-border: #607587;
+  --color-tag-bg: #edf2f7;
+  --color-code-bg: #edf2f7;
+  --color-code-text: #19212c;
+  --color-shadow: rgba(25, 33, 44, 0.10);
+  --color-shadow-hover: rgba(25, 33, 44, 0.14);
   --content-width: 68rem;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.65;
   color: var(--color-text);
   background: var(--color-bg);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: #111820;
+  --color-surface: #1b2632;
+  --color-text: #edf2f7;
+  --color-muted: #b6c2ce;
+  --color-accent: #8fc7ff;
+  --color-border: #607587;
+  --color-focus: #ffbf69;
+  --color-card-border: #607587;
+  --color-card-hover-border: #74899c;
+  --color-tag-bg: #293846;
+  --color-code-bg: #253340;
+  --color-code-text: #f0f5fa;
+  --color-shadow: rgba(0, 0, 0, 0.2);
+  --color-shadow-hover: rgba(0, 0, 0, 0.32);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --color-bg: #111820;
+    --color-surface: #1b2632;
+    --color-text: #edf2f7;
+    --color-muted: #b6c2ce;
+    --color-accent: #8fc7ff;
+    --color-border: #607587;
+    --color-focus: #ffbf69;
+    --color-card-border: #607587;
+    --color-card-hover-border: #74899c;
+    --color-tag-bg: #293846;
+    --color-code-bg: #253340;
+    --color-code-text: #f0f5fa;
+    --color-shadow: rgba(0, 0, 0, 0.2);
+    --color-shadow-hover: rgba(0, 0, 0, 0.32);
+  }
 }
 
 * {
@@ -40,8 +86,8 @@ a:hover {
   text-decoration-thickness: 0.14em;
 }
 
-a:focus-visible {
-  outline: 3px solid #d15c00;
+:focus-visible {
+  outline: 3px solid var(--color-focus);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -142,6 +188,28 @@ a:focus-visible {
   font-weight: 600;
 }
 
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0.4rem 0.75rem;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.4rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: var(--color-tag-bg);
+}
+
+.theme-toggle[hidden] {
+  display: none;
+}
+
 .page-content {
   flex: 1;
   padding-block: clamp(2.5rem, 7vw, 5rem);
@@ -196,14 +264,14 @@ a:focus-visible {
   min-width: 0;
   padding: 1.25rem;
   background: var(--color-surface);
-  border: 1px solid #bdc9d6;
+  border: 1px solid var(--color-card-border);
   border-radius: 0.75rem;
-  box-shadow: 0 2px 8px rgba(25, 33, 44, 0.10);
+  box-shadow: 0 2px 8px var(--color-shadow);
 }
 
 .project-card:hover {
-  border-color: #9cabbc;
-  box-shadow: 0 4px 12px rgba(25, 33, 44, 0.14);
+  border-color: var(--color-card-hover-border);
+  box-shadow: 0 4px 12px var(--color-shadow-hover);
 }
 
 .project-card h3 {
@@ -229,7 +297,7 @@ a:focus-visible {
 .project-stack li {
   padding: 0.15rem 0.55rem;
   color: var(--color-muted);
-  background: #edf2f7;
+  background: var(--color-tag-bg);
   border-radius: 999px;
   font-size: 0.85rem;
 }
@@ -295,6 +363,24 @@ td {
 pre {
   max-width: 100%;
   overflow-x: auto;
+  padding: 1rem;
+  color: var(--color-code-text);
+  background: var(--color-code-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+}
+
+code {
+  padding: 0.1em 0.3em;
+  color: var(--color-code-text);
+  background: var(--color-code-bg);
+  border-radius: 0.25rem;
+}
+
+pre code {
+  padding: 0;
+  color: inherit;
+  background: transparent;
 }
 
 @media (max-width: 40rem) {
