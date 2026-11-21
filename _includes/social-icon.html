@@ -1,10 +1,7 @@
 {%- case include.name -%}
   {%- when 'github' -%}
-    <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <circle cx="7" cy="7" r="2.5"/>
-      <circle cx="17" cy="7" r="2.5"/>
-      <circle cx="12" cy="17" r="2.5"/>
-      <path d="M9 8.5 10.8 15M15 8.5 13.2 15M9.5 7h5"/>
+  <svg class="social-icon social-icon-github" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <use href="{{ '/assets/icons/github.svg#github' | relative_url }}"/>
     </svg>
   {%- when 'linkedin' -%}
     <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
