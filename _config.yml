@@ -8,17 +8,21 @@ baseurl: ""
 lang: en
 
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
 
 social_links:
   - label: GitHub
+    icon: github
     url: https://github.com/shivanshu-semwal
   - label: LinkedIn
+    icon: linkedin
     url: https://www.linkedin.com/in/shivanshu-semwal
   - label: Pixelfed
+    icon: pixelfed
     url: https://portfolio.pixelfed.social/totoro
   - label: Twitter
+    icon: twitter
     url: https://twitter.com/shivanshusemwal
   - label: Lichess
+    icon: lichess
     url: https://lichess.org/@/totoro-ghost

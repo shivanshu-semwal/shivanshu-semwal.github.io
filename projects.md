@@ -8,4 +8,4 @@ permalink: /projects/
 <div class="prose">
   <p>Selected projects, tools, and technical notes. Each card links to its source or project page.</p>
 </div>
-{% include project-list.html %}
+{% include project-list.html featured_only=false %}

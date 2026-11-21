@@ -3,9 +3,13 @@
     <p>{{ site.author.name | escape }} · <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
     <ul class="social-links" aria-label="Social profiles">
       {% for link in site.social_links %}
-        <li><a href="{{ link.url }}">{{ link.label | escape }}</a></li>
+        <li>
+          <a href="{{ link.url }}">
+            {%- include social-icon.html name=link.icon %}
+            {{ link.label | escape }}
+          </a>
+        </li>
       {% endfor %}
     </ul>
-    <p><a href="{{ '/feed.xml' | relative_url }}">RSS feed</a></p>
   </div>
 </footer>
