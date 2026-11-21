@@ -1,30 +1,24 @@
-title: ~/shivanshu
+title: Shivanshu Semwal
 author:
   name: Shivanshu Semwal
-  email: semwalshivanshu.com
+  email: semwalshivanshu@gmail.com
+description: Software developer building thoughtful tools and AI products.
+url: https://shivanshu-semwal.github.io
+baseurl: ""
+lang: en
 
-# The `>` after `description:` means to ignore line-breaks until next key.
-# If you want to omit the line-break after the end of text, use `>-` instead.
-description: >
-  Shivanshu, crafting code to create solutions and a better tomorrow.
-
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-paginate
-minima:
-  social_links:
-     - { platform: github,         user_url: "https://github.com/shivanshu-semwal" }
-     - { platform: instagram,      user_url: "https://portfolio.pixelfed.social/totoro" }
-     - { platform: linkedin,       user_url: "https://www.linkedin.com/in/shivanshu-semwal" }
-     - { platform: twitter,        user_url: "https://twitter.com/shivanshusemwal" }
-  skin: auto
 
-header_pages:
-  - projects.md
-  - bookmarks.md
-  - about.md
-
-paginate: 5
-paginate_path: "/project/page:num/"
+social_links:
+  - label: GitHub
+    url: https://github.com/shivanshu-semwal
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/shivanshu-semwal
+  - label: Pixelfed
+    url: https://portfolio.pixelfed.social/totoro
+  - label: Twitter
+    url: https://twitter.com/shivanshusemwal
+  - label: Lichess
+    url: https://lichess.org/@/totoro-ghost

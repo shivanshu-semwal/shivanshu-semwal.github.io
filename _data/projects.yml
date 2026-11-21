@@ -1,0 +1,82 @@
+- title: Blog
+  description: A blog site built with Jekyll.
+  url: https://github.com/shivanshu-semwal/blog
+  stack:
+    - Jekyll
+    - Liquid
+- title: Alacritty Conf
+  description: A Bash script and Rofi interface for changing Alacritty terminal configuration.
+  url: https://github.com/totoro-ghost/alacritty-conf
+  stack:
+    - Bash
+    - Python
+- title: Totoro Dotfiles
+  description: Configuration files for my Lubuntu distribution and other applications.
+  url: https://github.com/totoro-ghost/dotfiles
+  stack:
+    - Linux
+    - Dotfiles
+- title: Recipe Recommender
+  description: Discover dishes that can be made from the ingredients you have available.
+  url: https://github.com/shivanshu-semwal/recipe-recommender
+  stack:
+    - Neo4j
+    - Node.js
+    - Express.js
+- title: Animations JS
+  description: Fun visualizations created with JavaScript and p5.js.
+  url: https://github.com/shivanshu-semwal/animations-js
+  stack:
+    - p5.js
+    - JavaScript
+- title: Hand Gesture Recognition
+  description: Recognize hand gestures from a live video feed using image segmentation and convolutional neural networks.
+  url: https://github.com/shivanshu-semwal/hand-gesture-recognition
+  stack:
+    - Machine Learning
+    - CNN
+    - Streamlit
+- title: AI Games
+  description: A collection of JavaScript games, including games that use AI.
+  url: https://github.com/shivanshu-semwal/ai-games
+  stack:
+    - JavaScript
+    - HTML
+- title: Online Auction System
+  description: A web app for online auctions, where sellers schedule auctions and bidders compete for products.
+  url: https://github.com/shivanshu-semwal/e_Auction
+  stack:
+    - Django
+    - Python
+    - Bootstrap
+    - MongoDB
+- title: Song Metadata Fetch
+  description: Edit song metadata using an unofficial Shazam clone.
+  url: https://github.com/shivanshu-semwal/song-metadata-fetch
+  stack:
+    - Bash
+    - Python
+- title: Competitive Programming Solutions and Tips
+  description: Personal notes on competitive programming.
+  url: https://shivanshu-semwal.github.io/cp/
+  stack:
+    - MkDocs
+    - Python
+- title: Data Structures & Algorithm Notes
+  description: Comprehensive notes on data structures and algorithms.
+  url: https://shivanshu-semwal.github.io/ds-algo/
+  stack:
+    - MkDocs
+    - Python
+- title: Notes
+  description: Notes on computer science, programming, and Linux.
+  url: https://shivanshu-semwal.github.io/notes/
+  stack:
+    - MkDocs
+    - Python
+- title: Portfolio Site
+  description: Personal portfolio site made with Jekyll.
+  url: https://github.com/shivanshu-semwal/shivanshu-semwal.github.io
+  stack:
+    - Jekyll
+    - Liquid
