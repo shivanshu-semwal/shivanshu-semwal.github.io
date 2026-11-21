@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+description: More about Shivanshu Semwal.
 ---
 
 Hi, I am a software developer with a passion for creating innovative and efficient solutions.
