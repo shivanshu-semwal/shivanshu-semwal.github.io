@@ -6,65 +6,47 @@
     (function () {
       var storageKey = "theme";
       var root = document.documentElement;
-      var preference;
+      var mode = "system";
 
       try {
-        preference = window.localStorage.getItem(storageKey);
-      } catch (error) {
-        preference = null;
-      }
-
-      if (preference === "light" || preference === "dark") {
-        root.setAttribute("data-theme", preference);
-      }
-
-      function currentTheme() {
-        if (root.hasAttribute("data-theme")) {
-          return root.getAttribute("data-theme");
+        var storedMode = window.localStorage.getItem(storageKey);
+        if (storedMode === "dark" || storedMode === "light" || storedMode === "system") {
+          mode = storedMode;
         }
-        return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light";
+      } catch (error) {
+        // System preference remains available when storage is disabled.
       }
 
-      function updateToggle(button) {
-        var isDark = currentTheme() === "dark";
-        button.setAttribute("aria-pressed", String(isDark));
-        button.hidden = false;
+      function applyMode(nextMode) {
+        mode = nextMode;
+        root.setAttribute("data-theme-mode", mode);
+        if (mode === "system") {
+          root.removeAttribute("data-theme");
+        } else {
+          root.setAttribute("data-theme", mode);
+        }
       }
+
+      applyMode(mode);
 
       document.addEventListener("DOMContentLoaded", function () {
-        var button = document.querySelector("[data-theme-toggle]");
-        if (!button) {
+        var control = document.querySelector("[data-theme-control]");
+        var select = document.querySelector("[data-theme-select]");
+        if (!control || !select) {
           return;
         }
 
-        updateToggle(button);
-        button.addEventListener("click", function () {
-          var nextTheme = currentTheme() === "dark" ? "light" : "dark";
-          root.setAttribute("data-theme", nextTheme);
-          updateToggle(button);
+        select.value = mode;
+        control.hidden = false;
+        select.addEventListener("change", function () {
+          applyMode(select.value);
 
           try {
-            window.localStorage.setItem(storageKey, nextTheme);
+            window.localStorage.setItem(storageKey, mode);
           } catch (error) {
-            // The current choice still applies for this page when storage is unavailable.
+            // The selected mode still applies for this page when storage is unavailable.
           }
         });
-
-        if (window.matchMedia) {
-          var colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
-          var updateSystemTheme = function () {
-            if (!root.hasAttribute("data-theme")) {
-              updateToggle(button);
-            }
-          };
-          if (colorScheme.addEventListener) {
-            colorScheme.addEventListener("change", updateSystemTheme);
-          } else if (colorScheme.addListener) {
-            colorScheme.addListener(updateSystemTheme);
-          }
-        }
       });
     })();
   </script>

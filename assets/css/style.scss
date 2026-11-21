@@ -183,16 +183,58 @@ a:hover {
 }
 
 .site-nav a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   padding-block: 0.5rem;
   font-weight: 600;
 }
 
-.theme-toggle {
+.nav-icon {
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.theme-control {
   display: inline-flex;
   align-items: center;
+  gap: 0.35rem;
   min-height: 2.5rem;
-  padding: 0.4rem 0.75rem;
+}
+
+.theme-control[hidden] {
+  display: none;
+}
+
+.theme-mode-icon {
+  display: none;
+  width: 1.1rem;
+  height: 1.1rem;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+:root[data-theme-mode="dark"] .icon-dark,
+:root[data-theme-mode="light"] .icon-light,
+:root[data-theme-mode="system"] .icon-system,
+:root:not([data-theme-mode]) .icon-system {
+  display: block;
+}
+
+.theme-select {
+  max-width: 6.5rem;
+  min-height: 2.5rem;
+  padding: 0.35rem 0.5rem;
   color: var(--color-text);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -202,12 +244,8 @@ a:hover {
   cursor: pointer;
 }
 
-.theme-toggle:hover {
+.theme-select:hover {
   background: var(--color-tag-bg);
-}
-
-.theme-toggle[hidden] {
-  display: none;
 }
 
 .page-content {
