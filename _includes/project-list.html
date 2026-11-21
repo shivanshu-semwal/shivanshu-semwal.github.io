@@ -1,7 +1,18 @@
 <ul class="project-grid">
   {% for project in site.data.projects %}
+    {% if include.featured_only != true or project.featured %}
     <li class="project-card">
-      <h3><a href="{{ project.url }}">{{ project.title | escape }}</a></h3>
+      <h3>
+        <a href="{{ project.url }}">
+          {{ project.title | escape }}
+          {% unless project.url contains site.url %}
+            <svg class="external-link-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+              <path d="M9 2h5v5M14 2 7 9M12 9v4H3V4h4"/>
+            </svg>
+            <span class="visually-hidden">(external site)</span>
+          {% endunless %}
+        </a>
+      </h3>
       <p>{{ project.description | escape }}</p>
       {% if project.stack and project.stack.size > 0 %}
         <ul class="project-stack" aria-label="Technologies used">
@@ -11,5 +22,6 @@
         </ul>
       {% endif %}
     </li>
+    {% endif %}
   {% endfor %}
 </ul>

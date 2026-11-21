@@ -1,24 +1,28 @@
 - title: Blog
   description: A blog site built with Jekyll.
   url: https://github.com/shivanshu-semwal/blog
+  featured: false
   stack:
     - Jekyll
     - Liquid
 - title: Alacritty Conf
   description: A Bash script and Rofi interface for changing Alacritty terminal configuration.
   url: https://github.com/totoro-ghost/alacritty-conf
+  featured: true
   stack:
     - Bash
     - Python
 - title: Totoro Dotfiles
   description: Configuration files for my Lubuntu distribution and other applications.
   url: https://github.com/totoro-ghost/dotfiles
+  featured: false
   stack:
     - Linux
     - Dotfiles
 - title: Recipe Recommender
   description: Discover dishes that can be made from the ingredients you have available.
   url: https://github.com/shivanshu-semwal/recipe-recommender
+  featured: true
   stack:
     - Neo4j
     - Node.js
@@ -26,12 +30,14 @@
 - title: Animations JS
   description: Fun visualizations created with JavaScript and p5.js.
   url: https://github.com/shivanshu-semwal/animations-js
+  featured: false
   stack:
     - p5.js
     - JavaScript
 - title: Hand Gesture Recognition
   description: Recognize hand gestures from a live video feed using image segmentation and convolutional neural networks.
   url: https://github.com/shivanshu-semwal/hand-gesture-recognition
+  featured: true
   stack:
     - Machine Learning
     - CNN
@@ -39,12 +45,14 @@
 - title: AI Games
   description: A collection of JavaScript games, including games that use AI.
   url: https://github.com/shivanshu-semwal/ai-games
+  featured: true
   stack:
     - JavaScript
     - HTML
 - title: Online Auction System
   description: A web app for online auctions, where sellers schedule auctions and bidders compete for products.
   url: https://github.com/shivanshu-semwal/e_Auction
+  featured: true
   stack:
     - Django
     - Python
@@ -53,30 +61,35 @@
 - title: Song Metadata Fetch
   description: Edit song metadata using an unofficial Shazam clone.
   url: https://github.com/shivanshu-semwal/song-metadata-fetch
+  featured: false
   stack:
     - Bash
     - Python
 - title: Competitive Programming Solutions and Tips
   description: Personal notes on competitive programming.
   url: https://shivanshu-semwal.github.io/cp/
+  featured: false
   stack:
     - MkDocs
     - Python
 - title: Data Structures & Algorithm Notes
   description: Comprehensive notes on data structures and algorithms.
   url: https://shivanshu-semwal.github.io/ds-algo/
+  featured: true
   stack:
     - MkDocs
     - Python
 - title: Notes
   description: Notes on computer science, programming, and Linux.
   url: https://shivanshu-semwal.github.io/notes/
+  featured: false
   stack:
     - MkDocs
     - Python
 - title: Portfolio Site
   description: Personal portfolio site made with Jekyll.
   url: https://github.com/shivanshu-semwal/shivanshu-semwal.github.io
+  featured: false
   stack:
     - Jekyll
     - Liquid
